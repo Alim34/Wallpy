@@ -6,7 +6,7 @@
     <application
         android:label="@string/app_name"
         android:icon="@drawable/ic_launcher"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        android:theme="@style/Theme.WallpaperChanger"
         android:allowBackup="true">
 
         <activity
@@ -17,5 +17,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".WallpaperWidget"
+            android:label="@string/widget_label"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
     </application>
 </manifest>

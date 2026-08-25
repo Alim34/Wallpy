@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Wallpaper Changer</string>
-    <string name="pick_folder">Выбрать папку с картинками</string>
+    <string name="subtitle">Автоматическая смена обоев из вашей папки</string>
+    <string name="folder_card_title">📁 Папка с картинками</string>
+    <string name="interval_card_title">⏱ Интервал смены (минуты, мин. 15)</string>
+    <string name="pick_folder">Выбрать папку</string>
     <string name="pick_folder_first">Сначала выберите папку!</string>
     <string name="folder_not_selected">Папка не выбрана</string>
     <string name="folder_selected">Папка: %1$s</string>
-    <string name="interval_label">Интервал смены (минуты, минимум 15):</string>
-    <string name="start">Запустить</string>
-    <string name="stop">Остановить</string>
-    <string name="change_now">Сменить обои сейчас</string>
+    <string name="start">▶  Запустить автосмену</string>
+    <string name="stop">⏹  Остановить</string>
+    <string name="change_now">🎲  Сменить обои сейчас</string>
     <string name="started">Автосмена обоев запущена</string>
     <string name="stopped">Автосмена остановлена</string>
     <string name="changing">Меняю обои…</string>
-    <string name="status_running">Работает: смена каждые %1$d мин.</string>
-    <string name="status_stopped">Остановлено</string>
+    <string name="status_running">✅ Работает: смена каждые %1$d мин.</string>
+    <string name="status_stopped">⏸ Остановлено</string>
+    <string name="widget_label">Смена обоев</string>
+    <string name="widget_description">Кнопка мгновенной смены обоев</string>
+    <string name="widget_button">🖼  Сменить обои</string>
 </resources>

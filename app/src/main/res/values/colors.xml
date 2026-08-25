@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.WallpaperChanger" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorOnPrimary">@android:color/white</item>
-        <item name="android:statusBarColor">@color/primary_dark</item>
-    </style>
+    <color name="primary">#6C5CE7</color>
+    <color name="primary_dark">#5A4BD1</color>
+    <color name="header_gradient_end">#A29BFE</color>
+    <color name="on_header_muted">#E4E0FF</color>
 </resources>

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#6C5CE7</color>
-    <color name="primary_dark">#5A4BD1</color>
-    <color name="header_gradient_end">#A29BFE</color>
-    <color name="on_header_muted">#E4E0FF</color>
+    <!-- фон и карточки -->
+    <color name="bg">#17121F</color>
+    <color name="card">#211A30</color>
+    <color name="card_stroke">#372D4E</color>
+
+    <!-- текст -->
+    <color name="text_main">#EFE9F7</color>
+    <color name="text_muted">#A090BE</color>
+    <color name="accent_pink">#E8A0D8</color>
+    <color name="on_pill">#3A2547</color>
+
+    <!-- градиент кнопки -->
+    <color name="pill_start">#C9A0F0</color>
+    <color name="pill_end">#F5A8C8</color>
+
+    <!-- совместимость со старыми ссылками -->
+    <color name="primary">#B98EE8</color>
+    <color name="primary_dark">#17121F</color>
+    <color name="header_gradient_end">#F5A8C8</color>
+    <color name="on_header_muted">#A090BE</color>
 </resources>

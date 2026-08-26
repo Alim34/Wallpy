@@ -38,7 +38,9 @@ class WallpaperWorker(
 
         return try {
             val bitmap = decodeSampled(ctx, picked.uri) ?: return Result.retry()
-            WallpaperManager.getInstance(ctx).setBitmap(bitmap)
+            // FLAG_SYSTEM = только рабочий стол, экран блокировки не трогаем
+            WallpaperManager.getInstance(ctx)
+                .setBitmap(bitmap, null, true, WallpaperManager.FLAG_SYSTEM)
             prefs.edit().putString(KEY_LAST, picked.uri.toString()).apply()
             Result.success()
         } catch (e: Exception) {

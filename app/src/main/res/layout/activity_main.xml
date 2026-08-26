@@ -1,164 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
-    android:fillViewport="true">
+    android:background="@color/bg">
 
-    <LinearLayout
+    <!-- Фоновая картинка -->
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_main"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null" />
 
-        <!-- Заголовок -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:fontFamily="monospace"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_main"
-            android:layout_marginTop="12dp" />
+    <!-- Затемнение, чтобы текст читался -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9917121F" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/subtitle"
-            android:fontFamily="monospace"
-            android:textSize="15sp"
-            android:textColor="@color/text_muted"
-            android:layout_marginTop="2dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/statusText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/status_stopped"
-            android:fontFamily="monospace"
-            android:textSize="13sp"
-            android:textColor="@color/accent_pink"
-            android:layout_marginTop="14dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🌙"
-            android:textSize="40sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
-
-        <!-- Карточка: папка -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/btn_dark"
-            android:padding="20dp"
-            android:layout_marginTop="8dp">
+            android:padding="24dp">
+
+            <!-- Заголовок -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:fontFamily="monospace"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"
+                android:layout_marginTop="12dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/folder_card_title"
+                android:text="@string/subtitle"
                 android:fontFamily="monospace"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_main" />
+                android:textColor="@color/text_muted"
+                android:layout_marginTop="2dp" />
 
             <TextView
-                android:id="@+id/folderText"
-                android:layout_width="match_parent"
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/folder_not_selected"
+                android:text="@string/status_stopped"
                 android:fontFamily="monospace"
                 android:textSize="13sp"
-                android:textColor="@color/text_muted"
-                android:layout_marginTop="6dp" />
+                android:textColor="@color/accent_pink"
+                android:layout_marginTop="14dp" />
+
+            <!-- Распорка: прижимает контролы вниз, оставляя фон видимым -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="160dp" />
+
+            <!-- Карточка: папка -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/btn_dark"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/folder_card_title"
+                    android:fontFamily="monospace"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_main" />
+
+                <TextView
+                    android:id="@+id/folderText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/folder_not_selected"
+                    android:fontFamily="monospace"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted"
+                    android:layout_marginTop="6dp" />
+
+                <Button
+                    android:id="@+id/pickFolderButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/pick_folder"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/accent_pink"
+                    android:background="@drawable/input_bg"
+                    app:backgroundTint="@null"
+                    android:layout_marginTop="14dp" />
+            </LinearLayout>
+
+            <!-- Карточка: интервал -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/btn_dark"
+                android:padding="20dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/interval_card_title"
+                    android:fontFamily="monospace"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_main" />
+
+                <EditText
+                    android:id="@+id/intervalInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:inputType="number"
+                    android:hint="@string/interval_hint"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_muted"
+                    android:background="@drawable/input_bg"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+
+            <!-- Главная кнопка: розовая пилюля -->
+            <Button
+                android:id="@+id/changeNowButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/change_now"
+                android:fontFamily="monospace"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/on_pill"
+                android:background="@drawable/btn_pill"
+                app:backgroundTint="@null"
+                android:layout_marginTop="28dp" />
 
             <Button
-                android:id="@+id/pickFolderButton"
+                android:id="@+id/startButton"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="@string/pick_folder"
-                android:fontFamily="monospace"
-                android:textColor="@color/accent_pink"
-                android:background="@drawable/input_bg"
-                app:backgroundTint="@null"
-                android:layout_marginTop="14dp" />
-        </LinearLayout>
-
-        <!-- Карточка: интервал -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/btn_dark"
-            android:padding="20dp"
-            android:layout_marginTop="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/interval_card_title"
-                android:fontFamily="monospace"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_main" />
-
-            <EditText
-                android:id="@+id/intervalInput"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:inputType="number"
-                android:hint="@string/interval_hint"
+                android:layout_height="54dp"
+                android:text="@string/start"
                 android:fontFamily="monospace"
                 android:textColor="@color/text_main"
-                android:textColorHint="@color/text_muted"
-                android:background="@drawable/input_bg"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:background="@drawable/btn_dark"
+                app:backgroundTint="@null"
                 android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="@string/stop"
+                android:fontFamily="monospace"
+                android:textColor="@color/text_muted"
+                android:background="@drawable/btn_dark"
+                app:backgroundTint="@null"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp" />
         </LinearLayout>
-
-        <!-- Главная кнопка: розовая пилюля -->
-        <Button
-            android:id="@+id/changeNowButton"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/change_now"
-            android:fontFamily="monospace"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/on_pill"
-            android:background="@drawable/btn_pill"
-            app:backgroundTint="@null"
-            android:layout_marginTop="28dp" />
-
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="@string/start"
-            android:fontFamily="monospace"
-            android:textColor="@color/text_main"
-            android:background="@drawable/btn_dark"
-            app:backgroundTint="@null"
-            android:layout_marginTop="12dp" />
-
-        <Button
-            android:id="@+id/stopButton"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="@string/stop"
-            android:fontFamily="monospace"
-            android:textColor="@color/text_muted"
-            android:background="@drawable/btn_dark"
-            app:backgroundTint="@null"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp" />
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</FrameLayout>
